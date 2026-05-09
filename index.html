@@ -182,12 +182,15 @@
     }
 
     .section-label {
-      font-size: 10px;
-      letter-spacing: 0.12em;
+      font-size: 11px;
+      letter-spacing: 0.13em;
       text-transform: uppercase;
-      color: var(--text-muted);
-      font-weight: 400;
-      margin-bottom: 1.6rem;
+      color: var(--text-dark);
+      font-weight: 500;
+      margin-bottom: 2rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1.5px solid var(--navy);
+      display: inline-block;
     }
 
     /* ── RESEARCH ── */
@@ -199,22 +202,30 @@
     }
 
     .research-item {
-      border-left: 2px solid var(--navy);
-      padding: 2px 0 2px 16px;
+      background: var(--bg-light);
+      border-top: 2px solid var(--navy);
+      padding: 1.25rem 1.5rem;
+      border-radius: 2px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .research-item:hover {
+      box-shadow: 0 6px 24px rgba(28,43,58,0.10);
+      transform: translateY(-2px);
     }
 
     .research-item h3 {
       font-size: 14px;
       font-weight: 500;
       color: var(--text-dark);
-      margin-bottom: 5px;
+      margin-bottom: 6px;
       letter-spacing: 0.01em;
     }
 
     .research-item p {
-      font-size: 12px;
-      color: var(--text-muted);
-      line-height: 1.55;
+      font-size: 13px;
+      color: var(--text-mid);
+      line-height: 1.6;
     }
 
     .keywords-label {
