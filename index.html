@@ -78,14 +78,12 @@
     /* ── HERO BANNER ── */
     .hero-banner {
       position: relative;
-      min-height: 580px;
+      height: 340px;
       overflow: hidden;
       background: var(--navy);
     }
 
     .hero-banner > img {
-      position: absolute;
-      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -98,16 +96,14 @@
       inset: 0;
       background: linear-gradient(
         to bottom,
-        rgba(28, 43, 58, 0.22) 0%,
-        rgba(28, 43, 58, 0.22) 30%,
-        rgba(28, 43, 58, 0.62) 62%,
-        rgba(28, 43, 58, 0.82) 100%
+        rgba(28, 43, 58, 0.45) 0%,
+        rgba(28, 43, 58, 0.72) 100%
       );
       display: flex;
       align-items: flex-end;
     }
 
-    .hero-inner {
+    .hero-overlay-inner {
       width: 100%;
       max-width: var(--max-w);
       margin: 0 auto;
@@ -124,43 +120,51 @@
       margin-bottom: 10px;
     }
 
-    .hero-eyebrow {
+    .hero-overlay p {
       font-size: 12px;
       color: var(--navy-pale);
       letter-spacing: 0.09em;
       text-transform: uppercase;
       font-weight: 300;
-      margin-bottom: 1.5rem;
     }
 
-    .hero-profile-card {
-      background: var(--navy);
-      padding: 1.75rem 2rem;
-      border-radius: 3px;
+    /* ── ABOUT CARD (overlaps hero) ── */
+    .about-section {
+      padding: 0 2rem 4rem;
+    }
+
+    .about-card {
+      position: relative;
+      z-index: 10;
+      margin-top: -100px;
+      background: #fff;
+      border-radius: 4px;
+      box-shadow: 0 8px 48px rgba(28,43,58,0.18);
+      padding: 2.5rem;
       display: flex;
-      gap: 2.25rem;
+      gap: 2.75rem;
       align-items: flex-start;
     }
 
-    .hero-profile-card .headshot-wrap {
+    .about-card .headshot-wrap {
       flex-shrink: 0;
     }
 
-    .hero-profile-card .headshot-wrap img {
-      width: 140px;
-      height: 170px;
+    .about-card .headshot-wrap img {
+      width: 180px;
+      height: 220px;
       object-fit: cover;
       object-position: center top;
       border-radius: 3px;
       display: block;
-      box-shadow: 0 3px 16px rgba(0,0,0,0.4);
+      box-shadow: 0 4px 20px rgba(28,43,58,0.12);
     }
 
-    .hero-profile-card .bio {
+    .about-card .bio {
       font-family: 'Playfair Display', serif;
-      font-size: 15px;
+      font-size: 18px;
       line-height: 1.85;
-      color: var(--navy-pale);
+      color: #2a2a2a;
     }
 
     /* ── SECTION WRAPPER ── */
@@ -185,8 +189,6 @@
       font-weight: 400;
       margin-bottom: 1.6rem;
     }
-
-    /* ── ABOUT (removed — content lives in header now) ── */
 
     /* ── RESEARCH ── */
     .research-grid {
@@ -355,12 +357,12 @@
       nav { padding: 0 1.5rem; }
       .nav-links { gap: 1.2rem; }
 
-      .hero-banner { min-height: 420px; }
+      .hero-banner { height: 240px; }
       .hero-overlay h1 { font-size: 34px; }
 
-      .hero-profile-card { flex-direction: column; gap: 1.25rem; }
-      .hero-profile-card .headshot-wrap img { width: 100%; height: 200px; }
-      .hero-profile-card .bio { font-size: 14px; }
+      .about-card { flex-direction: column; gap: 1.5rem; margin-top: -60px; padding: 1.75rem; }
+      .about-card .headshot-wrap img { width: 100%; height: 240px; }
+      .about-card .bio { font-size: 16px; }
 
       section { padding: 2.5rem 1.25rem; }
 
@@ -386,23 +388,29 @@
   </nav>
 
   <!-- HERO BANNER -->
-  <div class="hero-banner" id="about">
+  <div class="hero-banner">
     <img src="clemson-banner.jpg" alt="Tillman Hall, Clemson University" />
     <div class="hero-overlay">
-      <div class="hero-inner">
+      <div class="hero-overlay-inner">
         <h1>Zak Connor</h1>
-        <p class="hero-eyebrow">Ph.D. Student &nbsp;·&nbsp; Clemson University &nbsp;·&nbsp; Business Administration</p>
-        <div class="hero-profile-card">
-          <div class="headshot-wrap">
-            <img src="headshot.jpg" alt="Zak Connor" />
-          </div>
-          <p class="bio">
-            Zak Connor brings over a decade of hands-on leadership and operations experience across healthcare, financial services, and technology, and is currently pursuing a Ph.D. in Business Administration at Clemson University. His research examines the leader as subject rather than source — exploring the emotional and psychological experience of occupying a leadership role, including the toll of role-based stressors such as upward incivility, perfectionism, rumination, and emotional labor, and the individual and organizational conditions that support long-term leader well-being and sustainability.
-          </p>
-        </div>
+        <p>Ph.D. Student &nbsp;·&nbsp; Clemson University &nbsp;·&nbsp; Business Administration</p>
       </div>
     </div>
   </div>
+
+  <!-- ABOUT -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="about-card">
+        <div class="headshot-wrap">
+          <img src="headshot.jpg" alt="Zak Connor" />
+        </div>
+        <p class="bio">
+          Zak Connor brings over a decade of hands-on leadership and operations experience across healthcare, financial services, and technology, and is currently pursuing a Ph.D. in Business Administration at Clemson University. His research examines the leader as subject rather than source — exploring the emotional and psychological experience of occupying a leadership role, including the toll of role-based stressors such as upward incivility, perfectionism, rumination, and emotional labor, and the individual and organizational conditions that support long-term leader well-being and sustainability.
+        </p>
+      </div>
+    </div>
+  </section>
 
   <!-- RESEARCH -->
   <section id="research">
