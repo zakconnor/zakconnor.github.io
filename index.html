@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,300,0,0" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -193,6 +194,31 @@
       display: inline-block;
     }
 
+    /* ── ICONS ── */
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 20;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .research-icon {
+      font-size: 28px;
+      color: var(--navy);
+      display: block;
+      margin-bottom: 12px;
+      opacity: 0.8;
+    }
+
+    .edu-icon {
+      font-size: 20px;
+      color: var(--navy);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .edu-icon.past { color: #b0bec8; }
+
     /* ── RESEARCH ── */
     .research-grid {
       display: grid;
@@ -261,16 +287,6 @@
 
     .edu-row:last-child { border-bottom: none; }
 
-    .edu-dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: var(--navy);
-      margin-top: 5px;
-      flex-shrink: 0;
-    }
-
-    .edu-dot.past { background: #b0bec8; }
 
     .edu-degree {
       font-size: 14px;
@@ -429,18 +445,22 @@
       <p class="section-label">Research interests</p>
       <div class="research-grid">
         <div class="research-item">
+          <span class="material-symbols-outlined research-icon">self_improvement</span>
           <h3>Leader well-being</h3>
           <p>Sustainability and resilience in leadership roles over time</p>
         </div>
         <div class="research-item">
+          <span class="material-symbols-outlined research-icon">person_off</span>
           <h3>Upward incivility</h3>
           <p>Subordinate-to-leader mistreatment and its psychological toll</p>
         </div>
         <div class="research-item">
+          <span class="material-symbols-outlined research-icon">psychology</span>
           <h3>Rumination &amp; perfectionism</h3>
           <p>Cognitive and self-regulatory stressors unique to leaders</p>
         </div>
         <div class="research-item">
+          <span class="material-symbols-outlined research-icon">theater_comedy</span>
           <h3>Emotional labor</h3>
           <p>The cost of managing emotions as a function of the role</p>
         </div>
@@ -460,21 +480,21 @@
       <p class="section-label">Education</p>
       <div class="edu-list">
         <div class="edu-row">
-          <div class="edu-dot"></div>
+          <span class="material-symbols-outlined edu-icon">school</span>
           <div>
             <p class="edu-degree">Ph.D., Business Administration &nbsp;<span class="edu-status">— in progress</span></p>
             <p class="edu-school">Clemson University</p>
           </div>
         </div>
         <div class="edu-row">
-          <div class="edu-dot past"></div>
+          <span class="material-symbols-outlined edu-icon past">school</span>
           <div>
             <p class="edu-degree">Master of Business Administration (MBA)</p>
             <p class="edu-school">West Virginia University</p>
           </div>
         </div>
         <div class="edu-row">
-          <div class="edu-dot past"></div>
+          <span class="material-symbols-outlined edu-icon past">school</span>
           <div>
             <p class="edu-degree">B.S., Business Administration</p>
             <p class="edu-school">Peirce College</p>
