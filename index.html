@@ -10,7 +10,7 @@
   <style>
     :root {
       --paper:      #f6f4ec;
-      --paper-2:    #efece1;
+      --paper-2:    #ece7d8;
       --ink:        #211f1a;
       --muted:      #6b655b;
       --faint:      #b7b0a2;
@@ -90,35 +90,21 @@
     nav.top a:hover { color: var(--green); border-color: var(--green); }
 
     /* ── HERO ── */
-    .hero-band { background: var(--paper); padding: 0; position: relative; overflow: hidden; }
-    .paw-watermark {
-      position: absolute;
-      top: -8%;
-      left: -10%;
-      width: 1040px;
-      height: 1040px;
-      transform: rotate(-10deg);
-      background: url("assets/clemson-paw-navy.png") no-repeat center / contain;
-      opacity: 0.04;
-      pointer-events: none;
-      z-index: 0;
-    }
-    .hero-band .wrap { position: relative; z-index: 1; }
     .hero {
       display: grid;
       grid-template-columns: 1fr 300px;
       gap: 64px;
       align-items: center;
       padding: 84px 0 72px;
-      border-bottom: 1px solid var(--line);
     }
     .hero h1 {
       font-family: var(--serif);
       font-weight: 500;
-      font-size: 60px;
+      font-size: 58px;
       line-height: 1.02;
-      letter-spacing: -0.012em;
+      letter-spacing: -0.014em;
       margin: 18px 0 0;
+      white-space: nowrap;
     }
     .hero .role {
       font-size: 21px;
@@ -140,14 +126,6 @@
       border-radius: 2px;
       filter: grayscale(18%) contrast(1.02);
     }
-    .portrait::after {
-      content: "";
-      position: absolute;
-      inset: 14px -14px -14px 14px;
-      border: 1px solid var(--green);
-      z-index: -1;
-      border-radius: 2px;
-    }
     .cta-row { display: flex; gap: 14px; margin-top: 30px; flex-wrap: wrap; }
     .btn {
       font-family: var(--sans);
@@ -168,7 +146,23 @@
     .btn-ghost:hover { border-color: var(--green); }
 
     /* ── SECTIONS ── */
-    section { padding: 76px 0; border-bottom: 1px solid var(--line); }
+    section { padding: 76px 0; }
+    .hero-band { background: var(--paper); padding: 0; position: relative; overflow: hidden; }
+    .paw-watermark {
+      position: absolute;
+      top: -8%;
+      left: -10%;
+      width: 1040px;
+      height: 1040px;
+      transform: rotate(-10deg);
+      background: url("assets/clemson-paw-navy.png") no-repeat center / contain;
+      opacity: 0.04;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .hero-band .wrap { position: relative; z-index: 1; }
+    .band--a { background: var(--paper); }
+    .band--b { background: var(--paper-2); }
     .sec-head { margin-bottom: 38px; }
     .sec-head h2 {
       font-family: var(--serif);
@@ -198,7 +192,7 @@
     }
     .edu-aside {
       align-self: start;
-      background: color-mix(in srgb, var(--ink) 4.5%, var(--paper));
+      background: var(--paper);
       border: 1px solid var(--line);
       border-top: 3px solid var(--green);
       border-radius: 3px;
@@ -267,7 +261,7 @@
       border-top: 1px solid var(--line);
       align-items: baseline;
     }
-    .pub:last-of-type { border-bottom: 1px solid var(--line); }
+    .pub:last-of-type { border-bottom: 0; }
     .pub .title { font-size: 20px; }
     .pub .title em { color: var(--green); font-style: italic; }
     .pub .meta { font-size: 16px; color: var(--muted); grid-column: 1; margin-top: 2px; }
@@ -297,6 +291,13 @@
     }
     .course .code-row { display: flex; align-items: center; gap: 10px; min-height: 0; }
     .course .code-row .code { white-space: nowrap; }
+    .course h3 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: 21px;
+      margin: 4px 0 0;
+    }
+    .course p { font-size: 16px; color: var(--muted); margin: 8px 0 0; }
     .course .badge {
       display: inline-block;
       font-family: var(--sans);
@@ -312,13 +313,6 @@
       margin-top: 0;
       white-space: nowrap;
     }
-    .course h3 {
-      font-family: var(--serif);
-      font-weight: 500;
-      font-size: 21px;
-      margin: 4px 0 0;
-    }
-    .course p { font-size: 16px; color: var(--muted); margin: 8px 0 0; }
 
     /* ── FOOTER / CONTACT ── */
     footer.site {
@@ -380,7 +374,7 @@
       .wrap { padding: 0 24px; }
       nav.top { display: none; }
       .hero { grid-template-columns: 1fr; gap: 40px; padding: 56px 0 48px; }
-      .hero h1 { font-size: 46px; }
+      .hero h1 { font-size: 40px; white-space: normal; }
       .portrait { max-width: 280px; }
       .interests, .teach, .contact-grid { grid-template-columns: 1fr; }
       section { padding: 52px 0; }
@@ -413,27 +407,27 @@
     <section class="hero-band">
       <div class="paw-watermark" aria-hidden="true"></div>
       <div class="wrap">
-      <div class="hero">
-        <div class="hero-text">
-          <div class="eyebrow">Ph.D. Student · Management · Leadership</div>
-          <h1>Zachary&nbsp;A.<br />Connor</h1>
-          <div class="role">Studying the leader as subject, not source.</div>
-          <p class="lede">A decade of leadership and operations practice across healthcare, finance, and technology industries—now turned toward research on the psychological experience of leading.</p>
-          <div class="cta-row">
-            <a class="btn btn-solid" href="zak-connor-web-cv.pdf" target="_blank" rel="noopener">Download CV ↓</a>
-            <a class="btn btn-ghost" href="#research">Research interests</a>
+        <div class="hero">
+          <div class="hero-text">
+            <div class="eyebrow">Ph.D. Student · Management · Leadership</div>
+            <h1>Zachary A. Connor</h1>
+            <div class="role">Studying the leader as subject, not source.</div>
+            <p class="lede">A decade of leadership and operations practice across healthcare, finance, and technology industries—now turned toward research on the psychological experience of leading.</p>
+            <div class="cta-row">
+              <a class="btn btn-solid" href="zak-connor-web-cv.pdf" target="_blank" rel="noopener">Download CV ↓</a>
+              <a class="btn btn-ghost" href="#research">Research interests</a>
+            </div>
+          </div>
+          <div class="portrait">
+            <img src="headshot.jpg" alt="Portrait of Zachary A. Connor" />
           </div>
         </div>
-        <div class="portrait">
-          <img src="headshot.jpg" alt="Portrait of Zachary A. Connor" />
-        </div>
-      </div>
       </div>
     </section>
 
     <!-- ABOUT -->
-    <div class="wrap">
-      <section id="about">
+    <section id="about" class="band band--b">
+      <div class="wrap">
         <div class="sec-head">
           <div class="eyebrow">Biography</div>
           <h2>About</h2>
@@ -460,12 +454,12 @@
             </div>
           </aside>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
 
     <!-- RESEARCH -->
-    <div class="wrap">
-      <section id="research">
+    <section id="research" class="band band--a">
+      <div class="wrap">
         <div class="sec-head">
           <div class="eyebrow">Program of research</div>
           <h2>Research interests</h2>
@@ -492,12 +486,12 @@
             <p>What it takes for leadership to remain viable—not just effective—across time, teams, and turbulence.</p>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
 
     <!-- PUBLICATIONS -->
-    <div class="wrap">
-      <section id="publications">
+    <section id="publications" class="band band--b">
+      <div class="wrap">
         <div class="sec-head">
           <div class="eyebrow">Selected work</div>
           <h2>Publications &amp; working papers</h2>
@@ -512,12 +506,12 @@
           <span class="tag">Working paper</span>
           <div class="meta">Connor, Z. A. — Manuscript in preparation, 2026.</div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
 
     <!-- TEACHING -->
-    <div class="wrap">
-      <section id="teaching" style="border-bottom: 0;">
+    <section id="teaching" class="band band--a">
+      <div class="wrap">
         <div class="sec-head">
           <div class="eyebrow">In the classroom</div>
           <h2>Teaching</h2>
@@ -542,8 +536,8 @@
             <p>Balancing global brand consistency with local market relevance.</p>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
 
   </main>
 
