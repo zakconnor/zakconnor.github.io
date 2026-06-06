@@ -14,8 +14,8 @@
       --ink:        #211f1a;
       --muted:      #6b655b;
       --faint:      #b7b0a2;
-      --green:      #1e3d2f;
-      --green-soft: #2f5641;
+      --green:      #1f3a52;
+      --green-soft: #33536e;
       --line:       #d8d3c5;
       --serif:      "Newsreader", Georgia, serif;
       --sans:       "Libre Franklin", system-ui, sans-serif;
@@ -165,6 +165,12 @@
     }
 
     /* ── ABOUT ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 52px;
+      align-items: start;
+    }
     .prose { max-width: 64ch; }
     .prose p { margin: 0 0 20px; text-wrap: pretty; }
     .prose p:last-child { margin-bottom: 0; }
@@ -175,6 +181,37 @@
       padding: 8px 12px 0 0;
       font-weight: 500;
       color: var(--green);
+    }
+    .edu-aside {
+      align-self: start;
+      background: color-mix(in srgb, var(--ink) 4.5%, var(--paper));
+      border: 1px solid var(--line);
+      border-top: 3px solid var(--green);
+      border-radius: 3px;
+      padding: 4px 26px 14px;
+    }
+    .edu-aside-head {
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--green-soft);
+      padding: 18px 0 14px;
+      margin-bottom: 2px;
+      border-bottom: 1px solid var(--line);
+    }
+    .edu-aside-item { padding: 16px 0; border-top: 1px solid var(--line); }
+    .edu-aside-item:first-of-type { border-top: 0; }
+    .edu-aside-item .d { font-family: var(--serif); font-weight: 500; font-size: 19px; line-height: 1.25; }
+    .edu-aside-item .i { font-size: 15px; color: var(--muted); margin-top: 4px; text-wrap: pretty; }
+    .edu-aside-item .m {
+      font-family: var(--sans); font-size: 11px; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--green-soft); margin-top: 8px;
+    }
+    @media (max-width: 860px) {
+      .about-grid { grid-template-columns: 1fr; gap: 32px; }
     }
 
     /* ── RESEARCH ── */
@@ -367,9 +404,27 @@
           <div class="eyebrow">Biography</div>
           <h2>About</h2>
         </div>
-        <div class="prose">
-          <p class="drop">Zak Connor brings over a decade of hands-on leadership and operations experience across healthcare, financial services, and technology industries, and is currently pursuing a Ph.D. in Business Administration at Clemson University.</p>
-          <p>His research examines the leader as subject rather than source—exploring the emotional and psychological experience of occupying a leadership role, including the toll of role-based stressors such as upward incivility, perfectionism, rumination, and emotional labor, and the individual and organizational conditions that support long-term leader well-being.</p>
+        <div class="about-grid">
+          <div class="prose">
+            <p class="drop">Zak Connor brings over a decade of hands-on leadership and operations experience across healthcare, financial services, and technology industries, and is currently pursuing a Ph.D. in Business Administration at Clemson University.</p>
+            <p>His research examines the leader as subject rather than source—exploring the emotional and psychological experience of occupying a leadership role, including the toll of role-based stressors such as upward incivility, perfectionism, rumination, and emotional labor, and the individual and organizational conditions that support long-term leader well-being.</p>
+          </div>
+          <aside class="edu-aside">
+            <div class="edu-aside-head">Education</div>
+            <div class="edu-aside-item">
+              <div class="d">Ph.D., Business Administration</div>
+              <div class="i">Clemson University · Clemson, SC</div>
+              <div class="m">In progress</div>
+            </div>
+            <div class="edu-aside-item">
+              <div class="d">Master of Business Administration</div>
+              <div class="i">West Virginia University · Morgantown, WV</div>
+            </div>
+            <div class="edu-aside-item">
+              <div class="d">B.S., Business Administration</div>
+              <div class="i">Peirce College · Philadelphia, PA</div>
+            </div>
+          </aside>
         </div>
       </section>
     </div>
